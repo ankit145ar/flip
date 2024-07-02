@@ -1,0 +1,113 @@
+.splitflap {
+  min-width:50PX;
+  font-size:50PX;
+  line-height: 50PX;
+  text-align:center;
+  height: 50PX;
+  color: rgb(70,70,70);
+  margin: 5px;
+  perspective: 1000px;
+  position: relative;
+  font-family: 'Yantramanav', sans-serif;
+  overflow: hidden;
+}
+.splitflap {
+  border: 1.5px solid black;
+  border-radius: 1.5vmin;
+  background-color:#FFF;
+}
+.front-top {
+  background-color:#FFF;
+  border-radius: 1.5vmin 1.5vmin 0 0;
+  height: 50%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.front-top:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+}
+.front-full {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: -50%;
+  border-radius:1.5vmin 1.5vmin 1.5vmin 1.5vmin;
+  z-index: -1;
+  background-color: black;
+  /* background-image: linear-gradient(rgba(255,255,255, 0), rgb(255,255,255)); */
+  transform-origin: center;
+}
+.back-top {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  background-color: #fff;
+  margin-top: -100%;
+  overflow: hidden;
+  border-radius: 1.5vmin 1.5vmin 0 0;
+  z-index: 2;
+  /* background-color: black; */
+  /* background-image: linear-gradient(rgb(255,255,255), rgba(255,255,255, 0)); */
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+}
+.back-top:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  border-bottom:.1px solid rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.back-full {
+position: relative;
+height: 100%;
+width: 100%;
+background-color: rgb(255,255,255);
+margin-top: -50%;
+/* border-radius: 1.2vmin; */
+z-index: -3;
+}
+
+.flip1{
+animation: flip1 ease-in .5s;
+animation-fill-mode: forwards;
+animation-direction: normal;
+}
+
+.flip2 {
+animation: flip2 ease-out .5s;
+animation-fill-mode: forwards;
+animation-direction:  normal;
+}
+.flip1.active,.flip2.active{
+  animation-iteration-count: infinite;
+}
+
+/* @keyframes flip1 {
+0% {
+  transform: rotateX(0deg);
+  background-color: rgb(255,255,255);
+}
+50% {
+  transform: rotateX(90deg);
+  background-color: black;
+}
+100% {
+  transform: rotateX(90deg);
+}
+} */
+
+
